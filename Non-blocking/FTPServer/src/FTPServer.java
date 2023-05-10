@@ -111,6 +111,8 @@ public class FTPServer {
     public FTPServer() {
         // inform the user to enter the port number
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the IP address for server: ");
+        String IpAddr = scanner.nextLine();
         System.out.println("Please input the port for server: ");
         int port = scanner.nextInt();
 
@@ -126,7 +128,7 @@ public class FTPServer {
         // bind the server socket to a port
         while (true) {
             try {
-                this.serverSocketChannel.bind(new InetSocketAddress("localhost", port));
+                this.serverSocketChannel.bind(new InetSocketAddress(IpAddr, port));
                 break;
             } catch (IOException e) {
                 e.printStackTrace();

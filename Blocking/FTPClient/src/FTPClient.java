@@ -20,7 +20,7 @@ public class FTPClient {
              DataOutputStream dos = new DataOutputStream(socket.getOutputStream())) {
             dos.writeUTF(fileName);
 
-            byte buffer[] = new byte[1 << 10];
+            byte buffer[] = new byte[1 << 16];
             int bytesRead = -1;
 
             System.out.println(fileName + " is being sent.");
